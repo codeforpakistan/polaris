@@ -241,7 +241,7 @@ importers:
         version: 13.3.0(rollup@2.79.1)
       '@shopify/polaris':
         specifier: ^13.9.0
-        version: link:../polaris-react
+        version: 13.9.1(react-dom@18.2.0)(react@18.2.0)
       '@types/is-git-clean':
         specifier: ^1.1.0
         version: 1.1.0
@@ -452,7 +452,7 @@ importers:
         version: 0.0.14(react@18.2.0)
       '@shopify/polaris':
         specifier: ^13.9.0
-        version: link:../polaris-react
+        version: 13.9.1(react-dom@18.2.0)(react@18.2.0)
       '@shopify/polaris-icons':
         specifier: ^9.3.0
         version: link:../polaris-icons
@@ -490,8 +490,8 @@ importers:
         specifier: ^4.1.1
         version: 4.1.1
       nanoid:
-        specifier: ^4.0.2
-        version: 4.0.2
+        specifier: ^5.0.9
+        version: 5.0.9
       next:
         specifier: ^13.5.1
         version: 13.5.1(@babel/core@7.23.6)(react-dom@18.2.0)(react@18.2.0)(sass@1.51.0)
@@ -5040,6 +5040,37 @@ packages:
       - supports-color
     dev: true
 
+  /@shopify/polaris-icons@9.3.0(react@18.2.0):
+    resolution: {integrity: sha512-fnH5Lcd3WFZNjlxGYGNtnjeq3P2xonRV8vChW4PqBfxdKlY/GQ/3/rIuxHzIgmLL0zukeZUaqERUN0lwSU+Xmg==}
+    engines: {node: '>=20.10.0'}
+    peerDependencies:
+      react: '*'
+    dependencies:
+      react: 18.2.0
+
+  /@shopify/polaris-tokens@9.4.0:
+    resolution: {integrity: sha512-jnCNxq9+XfWP9ijkvSsgQH5o3PeYgfWo4/zymoO+AeJvyngL+4LvlZ/nofvYj9DXLo74taTk05xui9qt22Zy2Q==}
+    engines: {node: '>=20.10.0'}
+    dependencies:
+      deepmerge: 4.3.1
+
+  /@shopify/polaris@13.9.1(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-jSBEDP3LPZlPWJbtwTLdW72K1LS73ocB7x3VXzbi1DvpxUcmVp3K1YxhdKGEKmwHAkcBqIvZCrVNS2jcaTBmhQ==}
+    engines: {node: '>=20.10.0'}
+    peerDependencies:
+      react: ^18.0.0
+      react-dom: ^18.0.0
+    dependencies:
+      '@shopify/polaris-icons': 9.3.0(react@18.2.0)
+      '@shopify/polaris-tokens': 9.4.0
+      '@types/react': 18.2.9
+      '@types/react-dom': 18.2.4
+      '@types/react-transition-group': 4.4.2
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+      react-fast-compare: 3.2.0
+      react-transition-group: 4.4.2(react-dom@18.2.0)(react@18.2.0)
+
   /@shopify/postcss-plugin@5.0.1(postcss@8.4.32):
     resolution: {integrity: sha512-/YBuS9i/wRUh5RyhdvEDONnUpdAdE2qLJ/xJrGk0fjvkqU9+Pqv4w0rCTIbEZ2OENh3EkeSrZHOwxhEOo2Scvg==}
     peerDependencies:
@@ -6640,7 +6671,6 @@ packages:
     resolution: {integrity: sha512-G2mHoTMTL4yoydITgOGwWdWMVd8sNgyEP85xVmMKAPUBwQWm9wBPQUmvbeF4V3WBY1P7mmL4BkjQ0SqUpf1snw==}
     dependencies:
       '@types/react': 18.2.9
-    dev: false
 
   /@types/react-syntax-highlighter@15.5.6:
     resolution: {integrity: sha512-i7wFuLbIAFlabTeD2I1cLjEOrG/xdMa/rpx2zwzAoGHuXJDhSqp9BSfDlMHSh9JSuNfxHk9eEmMX6D55GiyjGg==}
@@ -6652,7 +6682,6 @@ packages:
     resolution: {integrity: sha512-KibDWL6nshuOJ0fu8ll7QnV/LVTo3PzQ9aCPnRUYPfX7eZohHwLIdNHj7pftanREzHNP4/nJa8oeM73uSiavMQ==}
     dependencies:
       '@types/react': 18.2.9
-    dev: false
 
   /@types/react@17.0.50:
     resolution: {integrity: sha512-ZCBHzpDb5skMnc1zFXAXnL3l1FAdi+xZvwxK+PkglMmBrwjpp9nKaWuEvrGnSifCJmBFGxZOOFuwC6KH/s0NuA==}
@@ -10561,7 +10590,6 @@ packages:
     dependencies:
       '@babel/runtime': 7.23.6
       csstype: 3.1.1
-    dev: false
 
   /dom-serializer@0.2.2:
     resolution: {integrity: sha512-2/xPb3ORsQ42nHYiSunXkDjPLBaEj/xTwUO4B7XCZQTRk7EBtTOPaygh10YAAh2OI1Qrp6NWfpAhzswj0ydt9g==}
@@ -12369,7 +12397,7 @@ packages:
     resolution: {integrity: sha512-oWb1Z6mkHIskLzEJ/XWX0srkpkTQ7vaopMQkyaEIoq0fmtFVxOthb8cCxeT+p3ynTdkk/RZwbgG4brR5BeWECw==}
     engines: {node: '>= 4.0'}
     os: [darwin]
-    deprecated: The v1 package contains DANGEROUS / INSECURE binaries. Upgrade to safe fsevents v2
+    deprecated: Upgrade to fsevents v2 to mitigate potential security issues
     requiresBuild: true
     dependencies:
       bindings: 1.5.0
@@ -17172,9 +17200,9 @@ packages:
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
 
-  /nanoid@4.0.2:
-    resolution: {integrity: sha512-7ZtY5KTCNheRGfEFxnedV5zFiORN1+Y1N6zvPTnHQd8ENUvfaDBeuJDZb2bN/oXwXxu3qkTXDzy57W5vAmDTBw==}
-    engines: {node: ^14 || ^16 || >=18}
+  /nanoid@5.0.9:
+    resolution: {integrity: sha512-Aooyr6MXU6HpvvWXKoVoXwKMs/KyVakWwg7xQfv5/S/RIgJMy0Ifa45H9qqYy7pTCszrHzP21Uk4PZq2HpEM8Q==}
+    engines: {node: ^18 || >=20}
     hasBin: true
     dev: false
 
@@ -19544,7 +19572,6 @@ packages:
 
   /react-fast-compare@3.2.0:
     resolution: {integrity: sha512-rtGImPZ0YyLrscKI9xTpV8psd6I8VAtjKCzQDlzyDvqJA8XOW78TXYQwNRNd8g8JZnDu8q9Fu/1v4HPAVwVdHA==}
-    dev: false
 
   /react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
@@ -19623,7 +19650,6 @@ packages:
       prop-types: 15.8.1
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
-    dev: false
 
   /react-universal-interface@0.6.2(react@18.2.0)(tslib@2.4.0):
     resolution: {integrity: sha512-dg8yXdcQmvgR13RIlZbTRQOoUrDciFVoSBZILwjE2LFISxZZ8loVJKAkuzswl5js8BHda79bIb2b84ehU8IjXw==}
